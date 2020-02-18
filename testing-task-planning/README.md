@@ -28,7 +28,7 @@ The controls code will listen to `/controls/desired_state_global` and move the r
 # Republish Simulation Data
 Simulation publishes to different topics than task-planning listens to. In reality, the actual robot publishes to topics that sensor-fusion listens to, and sensor fusion publishes to `/state`, which task-planning listens to. The `simulation_republisher.py` script publishes simulation data to the topics that sensor-fusion listens to.
 
-However, for isolated task testing, it makes some sense to bypass sensor-fusion. If you want to do this, change one line of `simulation_republisher.py` to read `SENSOR_FUSION_ODOM_TOPIC = 'state'`. Now, this script will publish directly to the state topic. Lastly, run this script:
+However, for isolated task testing, it makes some sense to bypass sensor-fusion. If you want to do this, change one line of `simulation_republisher.py` to read `SENSOR_FUSION_ODOM_TOPIC = 'state'`. Now, this script will publish directly to the `/state` topic. Lastly, run this script:
 ```
 python ~/dev/robosub-ros/simulation/simulation_republisher.py
 ```
