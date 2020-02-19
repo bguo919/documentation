@@ -23,7 +23,7 @@ Make sure you have previously built the catkin workspace in the catkin_ws folder
 rosrun controls test_state_publisher.py &
 roslaunch controls controls.launch mode:=sim
 ```
-The controls code will listen to `/controls/desired_state_global` and move the robot in simulation accordingly
+The controls code will listen to `/controls/desired_pose_global` and move the robot in simulation accordingly
 
 # Republish Simulation Data
 Simulation publishes to different topics than task-planning listens to. In reality, the actual robot publishes to topics that sensor-fusion listens to, and sensor fusion publishes to `/state`, which task-planning listens to. The `simulation_republisher.py` script publishes simulation data to the topics that sensor-fusion listens to.
